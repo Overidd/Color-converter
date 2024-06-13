@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Color converter</title>
+</head>
+<body>
+    <div id="errorLog"></div>
+    <div class="color" id="firstColorDiv"></div>
+
+    <form action="" id="form" class="formColor">
+        <fieldset for="color" class="firstLabel">
+            <div id="firstCont">
+                <span>
+                    #
+                </span>
+                <button id="">
+                    <img src="images/arrow_drop.svg" alt="">
+                </button>
+            </div>
+            <input type="text" placeholder="Ingresa el color" autocomplete="off" name="color" id="colorInput" autofocus>
+        </fieldset>
+        <button class="btReverse" id="btReverse">
+            <img src="images/autorenew.svg" alt="autorenew">
+        </button>
+        <fieldset for="result" class="lastLabel">
+            <div id="lastCont">
+                <span>
+                    RGB
+                </span>
+                <button class="">
+                    <img src="images/arrow_drop.svg" alt="">
+                </button>
+            </div>
+            <input type="text" placeholder="" autocomplete="off" name="result" required disabled id="resulColor">
+            <button id="btcupy">
+                <img src="images/content_copy.svg" alt="">
+            </button>
+        </fieldset>
+        <fieldset class="">
+            <input type="submit" value="Convertir">
+            <input type="reset" value="reset">
+        </fieldset>
+    </form>
+    <div class="color" id="lastColorDiv"></div>
+
+    <section action="" class="content-options">
+        <div class="options">
+            <button>
+                <!-- <input type="checkbox"> -->
+                <span id="closeOption">
+                    <img src="images/close_fullscreen.svg" alt="">
+                </span>
+            </button>
+            <label for="option1">
+                <input type="radio" id="option1" name="option" value="1">
+                <span>#</span>
+            </label>
+            <label for="option2">
+                <input type="radio" id="option2" name="option" value="2">
+                <span>RGB</span>
+            </label>
+            <label for="option3">
+                <input type="radio" id="option3" name="option" value="3">
+                <span>HSL</span>
+            </label>
+            <!-- <label for=""></label> -->
+        </div>
+
+    </section>
+    <!-- <div></div> -->
+    <script src="main.js"></script>
+</body>
+</html>

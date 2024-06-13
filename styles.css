@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --bg-input:#fff; 
+}
+
+body{
+    min-height: 100dvb;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.color{
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 200px;
+    border: 1px solid #0002;
+}
+
+.formColor{
+    background-color: #fff;
+    box-shadow: 0px 0px 12px #0008;
+    font-size: 1rem;
+    align-items: center;
+    width: fit-content;
+    width: 90%;
+    max-width: 40rem;
+    padding: 2rem;
+    border-radius: 16px;
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
+.firstLabel, .lastLabel{
+    font-family: "Jaro", sans-serif;
+    color: #000a;
+    border: none;
+    flex: 1;
+    width: 100%;
+    --width-input: 80%;
+    background-color: var(--bg-input);
+    text-align: center;
+    overflow: hidden;
+    padding: 0.2rem;
+    /* border-radius: 9px; */
+    border-bottom: 2px solid #0002;
+    cursor: pointer;
+    
+    div{
+        display: inline-block;
+        width: calc(100% - var(--width-input) - 2%) ;
+        /* font-weight: bold; */
+        display: inline-flex;
+        align-items: center;
+        padding: 0 0.5rem;
+        /* justify-content: center; */
+    }   
+    input{
+        background-color: transparent;
+        width: var(--width-input);
+        padding: 0.7rem 1.5rem;
+        border: none;
+        font-size: inherit;
+        text-align: left;
+        /* margin-left: 5px; */
+        /* border: 1px solid #000; */
+
+    }
+    input:focus-visible{
+        outline: none;
+    }
+    span{
+        font-size: 1.4rem;
+    }
+}
+.lastLabel{
+    --width-input: 70%;
+    text-align: left;
+    div{
+        width: calc(100% - var(--width-input) - 12%);
+        vertical-align: middle;
+    }
+    #btcupy{
+        vertical-align: middle;
+        filter: invert(70%);
+    }
+    #btcupy:active{
+        animation: copy 0.1s ease-in-out both;      
+    }
+}
+
+@keyframes copy {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    25%{
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    50%{
+        transform: scale(1.10);
+        opacity: 0.7;
+    }
+    75%{
+        transform: scale(1.15);
+        opacity: 0.6;
+    }
+    100%{
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+
+}
+
+.btReverse{
+    transition: rotate 0.1s;
+    margin: 0.2rem;
+    img{
+        max-width: 100%;
+        width: 42px;
+    }
+}
+
+.btReverse:active{
+    animation: rotate 0.3s both;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+fieldset:last-child{
+    min-width: 100%;
+    border: none;
+    text-align: center;
+}
+
+input[type="submit"], input[type="reset"]{
+    background-color: #48b;
+    color: #fff;
+    width: 40%;
+    max-width: 10rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 0 5px 16px #0007;
+    transition: background-color 0.2s;
+}
+:is(input[type="submit"], input[type="reset"]):hover{
+    background-color: #4487bbe1;
+}
+
+.content-options{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backdrop-filter: blur(3px);
+    background-color: #fff1;
+    display: flex;
+    display: none;
+}
+
+
+.options{
+    font-family: "Jaro", sans-serif;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 12px #0009;
+    padding: 2rem;
+    width: 90%;
+    max-width: 20rem;
+    min-height: 20rem;
+    position: relative;
+    border-radius: 16px;
+
+    button{
+        position: absolute;
+        top: 0.7rem;
+        right: 0.7rem;
+    }
+    label{
+        display:  block;
+        cursor: pointer;
+        padding: 0.7rem;
+        margin: 0.5rem 0;
+        border: 1px solid #0003;
+        border-radius: 12px;
+        color: #000b;
+    
+    
+        input, span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        input{
+            appearance: none;
+            background-image: url('images/check_box_outline.svg');
+            background-size: contain;
+            /* background-color: #48b; */
+            width: 20px;
+            height:20px;
+            transform: scale(1.3);
+            margin-right: 10px;
+        }
+    }
+}
+
+label:has(input[type="radio"]:checked){
+    /* border-color: #48b; */
+    background-color: #234b;
+    color: #fff;
+}
+input[type="radio"]:checked{
+    background-image: url('images/check_box_fillo.svg');
+}
+
+#errorLog{
+    position: fixed;
+    top: 5%;
+    left: -100%;
+    padding: 1rem;
+    z-index: 10;
+    background-color: #b82626;
+    color: #fffc;
+    font-weight: bold;
+    border-radius: 16px;
+    /* animation: errorlog 1s backwards ease-out alternate ; */
+    /* animation-iteration-count: 2; */
+    /* animation-direction: alternate; */
+    /* animation: alternate; */
+    /* animation-play-state: paused; */
+}
+.errorclick{
+    animation: errorlog 1s backwards ease-out alternate ;
+    animation-iteration-count: 2;
+    /* animation-play-state: paused; */
+}
+
+@keyframes errorlog{
+    0%{
+        top: 5%;
+        left: -100%;
+        /* transform: translateX(-200%); */
+    }
+    45%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+    60%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+    70%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+    80%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+    90%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+    100%{
+        top: 5%;
+        left: 2%;
+        /* transform: translateX(0%); */
+    }
+}
+
+@media screen and (min-width: 600px){
+    .formColor{
+        flex-direction: row;
+        gap: 2rem 0;
+    }
+}
