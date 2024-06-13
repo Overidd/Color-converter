@@ -119,7 +119,8 @@ form.onsubmit = (e) => {
     if (colorInput.value) conversionColor(data.color)
 }
 
-btcupy.onclick = async () => {
+btcupy.onclick = async (e) => {
+    e.preventDefault();
     if(resulColor){
         await navigator.clipboard.writeText(resulColor.value)
     }   
