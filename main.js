@@ -204,7 +204,7 @@ const conversionColor = (color) => {
     }else{
         if(booleanLog){
             console.log('error')
-            errorLog.textContent = booleanSintaxi? 'Error en sintaxis': `No es posible hacer la conversion`
+            errorLog.textContent = booleanSintaxi? 'Error de sintaxis': `No es posible hacer la conversion`
             // errorLog.style.animation = 'errorlog 0.2s both ease-in-out'
             errorLog.classList.add('errorclick')
             booleanLog = false
