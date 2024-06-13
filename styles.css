@@ -96,7 +96,7 @@ button{
     text-align: left;
     div{
         width: calc(100% - var(--width-input) - 12%);
-        vertical-align: middle;
+        vertical-align: baseline;
     }
     #btcupy{
         vertical-align: middle;
